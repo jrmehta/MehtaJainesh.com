@@ -1,0 +1,78 @@
+<!doctype html>
+<html manifest="mymanifest.appcache">
+<meta http-equiv="expires" content="0">
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+<header id="navigation">
+	<h2><img src="images/PW_logo.gif" alt="PWD logo" style="width:150px;height:100px;"><br>Public Works Department </h2>
+</header>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+	<section1>
+	<script src="javascripts/jquery.min.js"></script>
+	<link rel="stylesheet" href="style/validationStyle.css">
+	<script src="javascripts/jqueryValidate.min.js"></script>
+	<script src="javascripts/offlineApp.js"></script>
+		<article>
+			<h3>Paris & Mehta</h3>
+			<form onsubmit="return submitForm()"  id="orderForm" name="orderForm" method="post">
+			  <fieldset id="add">
+				<label>Work Description</label><br>
+				<textarea name = "workDescription" id="workDescription" rows = "20" cols="50" required></textarea><br>
+				Word Count: <span id="display_count">0</span> word(s) out of 300.
+				<br><br>
+				<fieldset id="small">
+					<legend>Location details</legend>
+					Latitude:<span id="lat"></span><span style="color:red" id="latRequired"></span>
+					<input type="hidden" name="latitude"  id="latHidden" value="" required></input>
+					<br>Longitude:<span id="long"></span><span style="color:red" id="longRequired"></span>
+					<input type="hidden" name="longitude"  id="longHidden" value="" required></input>
+					<br>Altitude:<span id="altitude"></span><span style="color:red" id="altRequired"></span>
+					<input type="hidden" name="altitude"  id="altHidden" value="" required></input><br>
+					<input type="button" value="Get Location" name="no" onclick="getGeoLocation()"> <span style="color:#F58300" id="loading"></span>
+				</fieldset>
+				<br>
+				Date: <input type="date" id="date" name="date" required></input>
+				<br>
+				<label>
+				<fieldset>
+					<legend>Employee Info</legend>
+					First Name:  <input type"text" id="firstName" name="firstName" size = "20" maxlength = "50" required/><br>
+					Last Name:  <input type"text" id="lastName" name="lastName" size = "20" maxlength = "50" required/><br>
+				</fieldset>
+				<br>
+				<fieldset>
+					<legend>Severity</legend>
+					<select name="severity" required>
+					  <option name="severity" value="Minor">Minor</option>
+					  <option name="severity" value="Major">Major</option>
+					  <option name="severity" value="Urgent">Urgent</option>
+					</select>
+				</fieldset>
+				<br>
+				<input type="button" name="submite" value="Submit" id="btn"/>
+				<span class="loading-image" style="margin-left:2em"><img src="images/loading.gif" alt="Loading..." /></span>
+				<span class="localStorageCheck" style="margin-left:4em">Save To Local Storage: <img src="images/checked.gif"></img></span>
+				<span class="serverOnline" style="margin-left:4em">Data Sent To Server: <img src="images/checked.gif"></img></span>
+				<span class="serverOffline" style="margin-left:4em">Server Online: <img src="images/unchecked.gif"></img></span>
+
+			  </fieldset>
+			</form>
+		</article>
+			
+			<script>
+					$('span.loading-image').hide();
+					$('span.localStorageCheck').hide();
+					$('span.serverOnline').hide();
+					$('span.serverOffline').hide();
+					document.getElementById('date').value=fillDate();
+			</script>
+	</section1>
+	</head>
+<br>
+<footer id="copyright">
+	<hr></hr>
+	<p>&copy; 2012-2015-All rights reserved.</p>	
+</footer>
+
+</html>

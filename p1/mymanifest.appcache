@@ -1,0 +1,20 @@
+CACHE MANIFEST
+#VERSION 51
+
+
+CACHE:
+index.html
+javascripts/offlineApp.js
+javascripts/jquery.min.js
+style/validationStyle.css
+style/style.css
+javascripts/jqueryValidate.min.js
+images/PW_logo.gif
+images/checked.gif
+images/unchecked.gif
+images/loading.gif
+
+FALLBACK:
+
+NETWORK:
+*
